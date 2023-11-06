@@ -1,0 +1,548 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --white-color: #fff;
+  --bg-color: rgba(1, 110, 204, 0.06);
+  --primary-color: #fff;
+  --secondary-color: #fff;
+  --tertary-color: #19d2fe;
+  --first-color: #016ecc;
+  --second-color: #f0f6fc;
+}
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*/
+
+body {
+  overflow-x: hidden;
+}
+
+/* BUTTONS  */
+
+.btnTypeOne a {
+  padding: 15px 40px;
+  background-color: #ffffff;
+  color: #016ecc;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.btnTypeOne a:hover {
+  background-color: transparent;
+  color: #fff;
+  transition: all 1s ease-in-out;
+}
+
+.btnTypeTwo a {
+  padding: 10px 40px;
+  background-color: #016ecc;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid #016ecc;
+}
+
+.btnTypeTwo a:hover {
+  background-color: transparent;
+  color: #016ecc;
+  transition: all 0.5s ease-in-out;
+}
+
+.btnTypeThree a {
+  padding: 10px 40px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid #fff;
+}
+
+.btnTypeThree a:hover {
+  background-color: #fff;
+  color: #000;
+  transition: all 1s ease-in-out;
+}
+
+header {
+  padding: 30px 0;
+}
+
+header .desktopMode .logoContainer a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+header .desktopMode nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0 10px;
+  font-family: "Nunito Sans", Sans-serif;
+}
+
+/* ------------------- first container  */
+
+.firstContainer {
+  background-color: transparent;
+  background-image: linear-gradient(100deg, #016ecc 0%, #19d2fe 100%);
+}
+
+/* ------------------ second container  */
+
+.secondContainer {
+  padding: 50px 0px 10px 0px;
+  position: relative;
+}
+
+.secondContainer .elementor-background-overlay {
+  background-image: url(https://demo.themovation.com/stratus/wp-content/uploads/2019/06/CTA-bg.png);
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.37;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+/* 
+.secondContainer .elementor-shape {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+}
+
+.secondContainer .elementor-shape-bottom {
+  bottom: -1px;
+} */
+
+.secondContainer .secondContainer-leftSide h5 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.secondContainer .secondContainer-leftSide h1 {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.secondContainer .secondContainer-leftSide h3 {
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 1.45em;
+}
+
+.secondContainer .secondContainer-rightSide img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.secondContainer .elementor-shape {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+}
+
+.secondContainer .elementor-shape-bottom {
+  bottom: -1px;
+}
+
+.secondContainer .elementor-shape .elementor-shape-fill {
+  fill: #fff;
+  transform-origin: center;
+  transform: rotateY(0deg);
+}
+
+.secondContainer .elementor-shape-bottom svg {
+  width: calc(110% + 1.3px);
+  height: 110px;
+  transform: translateX(-50%) rotateY(180deg);
+}
+
+.secondContainer .elementor-shape svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  position: relative;
+  left: 50%;
+}
+
+/* --------------  THIRD CONTAINER */
+
+.thirdContainer {
+  padding: 70px 0 170px 0;
+  position: relative;
+  background-color: #fff;
+}
+
+.thirdContainer .iconsContainer > div {
+  padding: 0 10px;
+}
+
+
+
+/* ------------  FORTH CONTAINER ----------------  */
+
+.forthContainer {
+  background-color: var(--second-color);
+  position: relative;
+}
+
+.forthContainer .desc > div {
+  margin-bottom: 10px;
+}
+
+.forthContainer .desc h5 {
+  color: #016ecc;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.forthContainer .desc h1 {
+  font-size: 46px;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: #000;
+  font-weight: 500;
+}
+
+.forthContainer .desc p {
+  font-size: 19px;
+  line-height: 1.5em;
+  color: #000;
+  font-weight: 500;
+}
+
+.forthContainer .tripleBox {
+  margin-top: 60px;
+  padding-bottom: 120px;
+}
+
+.forthContainer .tripleBox .tripleBox-card {
+  box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin: 0px 20px 0px 20px;
+}
+
+.forthContainer .tripleBox .tripleBox-card h3 {
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.35em;
+  letter-spacing: 0.4px;
+}
+
+.forthContainer .tripleBox .tripleBox-card p {
+  font-size: 18px;
+}
+
+/* Wave Bottom */
+
+.forthContainer .bottomWave .elementor-shape {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+}
+
+.forthContainer .bottomWave .elementor-shape-bottom {
+  bottom: -1px;
+}
+
+.forthContainer .bottomWave .elementor-shape .elementor-shape-fill {
+  fill: #fff;
+  transform-origin: center;
+  transform: rotateY(0deg);
+}
+
+.forthContainer .bottomWave .elementor-shape-bottom svg {
+  width: calc(170% + 1.3px);
+  height: 110px;
+  transform: translateX(-50%) rotateY(0deg);
+}
+
+.forthContainer .bottomWave .elementor-shape svg {
+  display: block;
+  width: calc(170% + 1.3px);
+  position: relative;
+  left: 50%;
+}
+
+
+/* Wave TOP */
+
+.forthContainer .topWave .elementor-shape {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+}
+
+.forthContainer .topWave .elementor-shape-bottom {
+  top: -70px;
+}
+
+.forthContainer .topWave .elementor-shape .elementor-shape-fill {
+  fill: var(--second-color);
+  /* fill: green; */
+  transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+.forthContainer .topWave .elementor-shape-bottom svg {
+  width: calc(140% + 1.3px);
+    height: 70px;
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.forthContainer .topWave .elementor-shape svg {
+  display: block;
+  width: calc(140% + 1.3px);
+  position: relative;
+  left: 50%;
+}
+
+
+
+/* -----------------  FIFTH CONTAINER ---------------  */
+
+.fifthContainer {
+  background-color: #fff;
+}
+
+.fifthContainer .twoSection .twoSection-left img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.fifthContainer .twoSection .twoSection-right > div {
+  margin-bottom: 30px;
+}
+
+.fifthContainer .twoSection .twoSection-right h6 {
+  color: #016ecc;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+}
+
+.fifthContainer .twoSection .twoSection-right h3 {
+  color: #000;
+  font-size: 37px;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.fifthContainer .twoSection .twoSection-right p {
+  color: #000;
+  font-size: 18px;
+  line-height: 2em;
+  letter-spacing: 1px;
+}
+/* ------------------- sixth container  */
+
+
+.sixthContainer {
+  background-color: rgba(1, 110, 204, 0.06);
+  position: relative;
+/* background-color: red; */
+}
+
+.sixthContainer .desc > div {
+  margin-bottom: 10px;
+}
+
+.sixthContainer .desc h6 {
+  color: #016ecc;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sixthContainer .desc h2 {
+  font-size: 46px;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: #000;
+  font-weight: 500;
+}
+
+.sixthContainer .desc h5 {
+  font-size: 19px;
+  line-height: 1.5em;
+  color: #000;
+  font-weight: 500;
+}
+
+.sixthContainer .tripleBox {
+  margin-top: 60px;
+  /* margin-bottom: 200px; */
+}
+
+.sixthContainer .tripleBox .threeBoxes-card {
+  padding: 50px 40px 40px 40px;
+  box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin: 0px 20px 0px 20px;
+}
+.sixthContainer .tripleBox .threeBoxes-card > div {
+  margin-bottom: 15px;
+}
+
+.sixthContainer .tripleBox .threeBoxes-card h4 {
+  color: #1d2023;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sixthContainer .tripleBox .threeBoxes-card p {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  }
+
+/* Wave TOP */
+
+.sixthContainer .topWave .elementor-shape {
+  /* overflow: hidden; */
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+}
+
+.sixthContainer .topWave .elementor-shape-bottom {
+  top: -65px;
+  position: relative;
+  transform: rotate(0deg);
+}
+
+.sixthContainer .topWave .elementor-shape .elementor-shape-fill {
+  fill:rgba(1, 110, 204, 0.06);
+  transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+.sixthContainer .topWave .elementor-shape-bottom svg {
+    width: calc(170% + 1.3px);
+    height: 65px;
+    transform: translateX(-50%);
+}
+
+.sixthContainer .topWave .elementor-shape svg {
+  display: block;
+  width: calc(170% + 1.3px);
+  position: relative;
+  left: 50%;
+}
+
+
+
+
+/* ------------------- seventh container  */
+
+.seventhContainer {
+  background-color: transparent;
+  background-image: linear-gradient(100deg, #016ecc 0%, #19d2fe 100%);
+  padding: 60px 0;
+  position: relative;
+
+}
+
+.seventhContainer h3 {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+
+
+
+
+/* Wave bottom */
+
+.seventhContainer .topWave .elementor-shape {
+  /* overflow: hidden; */
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+  
+}
+
+.seventhContainer .topWave .elementor-shape-bottom {
+  transform: rotate(0deg);
+  top: -129px;
+}
+
+.seventhContainer .topWave .elementor-shape .elementor-shape-fill {
+  fill: linear-gradient(100deg, #016ecc 0%, #19d2fe 100%);
+    transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+.seventhContainer .topWave .elementor-shape-bottom svg {
+  width: calc(125% + 1.3px);
+  height: 129px;
+}
+
+.seventhContainer .topWave .elementor-shape svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
