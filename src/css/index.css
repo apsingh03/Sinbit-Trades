@@ -24,8 +24,17 @@
 
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
+  /* width: 99%;
+  height: 100%; */
+
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* BUTTONS  */
@@ -56,7 +65,6 @@ body {
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
-
   border-radius: 100px;
   text-transform: uppercase;
   text-align: center;
@@ -76,7 +84,6 @@ body {
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
-
   border-radius: 100px;
   text-transform: uppercase;
   text-align: center;
@@ -90,7 +97,7 @@ body {
 }
 
 header {
-  padding: 30px 0;
+  padding: 5px 15px;
 }
 
 header .desktopMode .logoContainer a {
@@ -105,13 +112,46 @@ header .desktopMode nav a {
   color: #fff;
   font-weight: 600;
   font-size: 15px;
-  padding: 0 10px;
+  padding: 40px 10px 0 10px;
   font-family: "Nunito Sans", Sans-serif;
+}
+
+header .desktopMode nav #hamburgerIcon {
+  display: none;
+}
+
+header #mobileNav {
+  background-color: #000;
+  width: 100%;
+}
+
+header #mobileNav li {
+  list-style: none;
+  display: block;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+header #mobileNav li:hover {
+  background-image: linear-gradient(100deg, #016ecc 0%, #19d2fe 100%);
+  color: #000;
+}
+
+header #mobileNav li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+header .activateMobileNav {
+  display: none;
 }
 
 /* ------------------- first container  */
 
 .firstContainer {
+  padding-top: 0px;
   background-color: transparent;
   background-image: linear-gradient(100deg, #016ecc 0%, #19d2fe 100%);
 }
@@ -119,7 +159,7 @@ header .desktopMode nav a {
 /* ------------------ second container  */
 
 .secondContainer {
-  padding: 50px 0px 10px 0px;
+  padding: 94px 0px 0px 62px;
   position: relative;
 }
 
@@ -130,36 +170,23 @@ header .desktopMode nav a {
   opacity: 0.37;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
-/* 
-.secondContainer .elementor-shape {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  line-height: 0;
-  direction: ltr;
-}
-
-.secondContainer .elementor-shape-bottom {
-  bottom: -1px;
-} */
 
 .secondContainer .secondContainer-leftSide h5 {
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
 .secondContainer .secondContainer-leftSide h1 {
   color: #ffffff;
-  font-size: 50px;
+  font-size: 53px;
   font-weight: bold;
-  line-height: 1.15em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  line-height: 1.2em;
+  /* text-transform: capitalize; */
+  letter-spacing: 0.5px;
   margin-bottom: 20px;
 }
 
@@ -167,12 +194,19 @@ header .desktopMode nav a {
   color: #ffffff;
   font-size: 25px;
   line-height: 1.45em;
+  letter-spacing: 0;
 }
 
 .secondContainer .secondContainer-rightSide img {
   width: 100%;
   height: auto;
-  vertical-align: middle;
+  margin: -49px 0 0 -36px;
+  z-index: 1;
+  position: relative;
+}
+
+.secondContainer .secondContainer-leftSide .secondContainer-btn {
+  margin-top: 40px;
 }
 
 .secondContainer .elementor-shape {
@@ -195,14 +229,14 @@ header .desktopMode nav a {
 }
 
 .secondContainer .elementor-shape-bottom svg {
-  width: calc(110% + 1.3px);
+  width: calc(120% + 1.3px);
   height: 110px;
   transform: translateX(-50%) rotateY(180deg);
 }
 
 .secondContainer .elementor-shape svg {
   display: block;
-  width: calc(100% + 1.3px);
+  width: calc(120% + 1.5px);
   position: relative;
   left: 50%;
 }
@@ -219,8 +253,6 @@ header .desktopMode nav a {
   padding: 0 10px;
 }
 
-
-
 /* ------------  FORTH CONTAINER ----------------  */
 
 .forthContainer {
@@ -229,7 +261,7 @@ header .desktopMode nav a {
 }
 
 .forthContainer .desc > div {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .forthContainer .desc h5 {
@@ -241,29 +273,32 @@ header .desktopMode nav a {
 }
 
 .forthContainer .desc h1 {
-  font-size: 46px;
+  font-size: 45px;
   font-weight: bold;
   line-height: 1.2em;
   color: #000;
+  letter-spacing: 0.1px;
   font-weight: 500;
 }
 
 .forthContainer .desc p {
-  font-size: 19px;
-  line-height: 1.5em;
+  font-size: 18px;
+  line-height: 2em;
   color: #000;
   font-weight: 500;
 }
 
 .forthContainer .tripleBox {
-  margin-top: 60px;
+  margin-top: 85px;
   padding-bottom: 120px;
 }
 
 .forthContainer .tripleBox .tripleBox-card {
   box-shadow: 0px 0px 40px 10px rgba(1, 110, 204, 0.05);
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-  margin: 0px 20px 0px 20px;
+  margin: 0px 15px;
+  padding: 75px 30px;
+  /* background-color: red!important; */
 }
 
 .forthContainer .tripleBox .tripleBox-card h3 {
@@ -311,7 +346,6 @@ header .desktopMode nav a {
   left: 50%;
 }
 
-
 /* Wave TOP */
 
 .forthContainer .topWave .elementor-shape {
@@ -331,13 +365,13 @@ header .desktopMode nav a {
   fill: var(--second-color);
   /* fill: green; */
   transform-origin: center;
-    transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 .forthContainer .topWave .elementor-shape-bottom svg {
   width: calc(140% + 1.3px);
-    height: 70px;
-    transform: translateX(-50%) rotateY(180deg);
+  height: 70px;
+  transform: translateX(-50%) rotateY(180deg);
 }
 
 .forthContainer .topWave .elementor-shape svg {
@@ -347,9 +381,7 @@ header .desktopMode nav a {
   left: 50%;
 }
 
-
-
-/* -----------------  FIFTH CONTAINER ---------------  */
+/* -----  FIFTH CONTAINER   */
 
 .fifthContainer {
   background-color: #fff;
@@ -362,7 +394,7 @@ header .desktopMode nav a {
 }
 
 .fifthContainer .twoSection .twoSection-right > div {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .fifthContainer .twoSection .twoSection-right h6 {
@@ -376,9 +408,9 @@ header .desktopMode nav a {
 
 .fifthContainer .twoSection .twoSection-right h3 {
   color: #000;
-  font-size: 37px;
-  font-weight: bold;
-  line-height: 1.5em;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.3em;
 }
 
 .fifthContainer .twoSection .twoSection-right p {
@@ -387,13 +419,30 @@ header .desktopMode nav a {
   line-height: 2em;
   letter-spacing: 1px;
 }
-/* ------------------- sixth container  */
 
+.fifthContainer .twoSection .twoSection-right .fifthContainer-btn1 {
+  margin-top: 30px;
+}
+
+.fifthContainer .twoSection .twoSection-right .fifthContainer-btn1 a {
+  padding: 10px 40px;
+  font-size: 15px;
+}
+
+.fifthContainer .twoSection .twoSection-right .fifthContainer-btn2 {
+  margin-top: 30px;
+}
+
+.fifthContainer .twoSection .twoSection-right .fifthContainer-btn2 a {
+  padding: 10px 40px;
+  font-size: 15px;
+}
+
+/* ----- sixth container  */
 
 .sixthContainer {
   background-color: rgba(1, 110, 204, 0.06);
   position: relative;
-/* background-color: red; */
 }
 
 .sixthContainer .desc > div {
@@ -444,11 +493,15 @@ header .desktopMode nav a {
   font-weight: bold;
 }
 
+.sixthContainer .wave {
+  padding: 1px;
+}
+
 .sixthContainer .tripleBox .threeBoxes-card p {
   color: #333;
   font-size: 14px;
   font-weight: 500;
-  }
+}
 
 /* Wave TOP */
 
@@ -468,15 +521,16 @@ header .desktopMode nav a {
 }
 
 .sixthContainer .topWave .elementor-shape .elementor-shape-fill {
-  fill:rgba(1, 110, 204, 0.06);
+  /* fill:rgba(1, 110, 204, 0.06); */
+  fill: red;
   transform-origin: center;
-    transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 .sixthContainer .topWave .elementor-shape-bottom svg {
-    width: calc(170% + 1.3px);
-    height: 65px;
-    transform: translateX(-50%);
+  width: calc(170% + 1.3px);
+  height: 65px;
+  transform: translateX(-50%);
 }
 
 .sixthContainer .topWave .elementor-shape svg {
@@ -486,9 +540,6 @@ header .desktopMode nav a {
   left: 50%;
 }
 
-
-
-
 /* ------------------- seventh container  */
 
 .seventhContainer {
@@ -496,7 +547,6 @@ header .desktopMode nav a {
   background-image: linear-gradient(100deg, #016ecc 0%, #19d2fe 100%);
   padding: 60px 0;
   position: relative;
-
 }
 
 .seventhContainer h3 {
@@ -505,9 +555,6 @@ header .desktopMode nav a {
   font-weight: 700;
   line-height: 1.3em;
 }
-
-
-
 
 /* Wave bottom */
 
@@ -518,7 +565,6 @@ header .desktopMode nav a {
   width: 100%;
   line-height: 0;
   direction: ltr;
-  
 }
 
 .seventhContainer .topWave .elementor-shape-bottom {
@@ -528,8 +574,8 @@ header .desktopMode nav a {
 
 .seventhContainer .topWave .elementor-shape .elementor-shape-fill {
   fill: linear-gradient(100deg, #016ecc 0%, #19d2fe 100%);
-    transform-origin: center;
-    transform: rotateY(0deg);
+  transform-origin: center;
+  transform: rotateY(0deg);
 }
 
 .seventhContainer .topWave .elementor-shape-bottom svg {
@@ -545,4 +591,363 @@ header .desktopMode nav a {
   transform: translateX(-50%);
 }
 
+/* calculator page  */
 
+#calculatorPage {
+  background-color: #f0f6fc;
+  margin-top: 100px;
+}
+
+.cryptoCalculator {
+  background-color: var(--text-color);
+  border-radius: 10px;
+}
+
+.calculationResult {
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* RESPONSIVE  */
+
+@media only screen and (max-width: 1130px) {
+  /* .sixthContainer {
+    background-color: red;
+  } */
+
+  .secondContainer {
+    padding: 54px 0px 0px 62px;
+  }
+
+  .secondContainer .secondContainer-leftSide h5 {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .secondContainer .secondContainer-leftSide h1 {
+    font-size: 48px;
+  }
+
+  .secondContainer .secondContainer-leftSide h3 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  /* .sixthContainer {
+    background-color: orange;
+  } */
+
+  .secondContainer {
+    padding: 40px 0px 40px 62px;
+  }
+
+  .secondContainer .secondContainer-leftSide h5 {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .secondContainer .secondContainer-leftSide h1 {
+    font-size: 35px;
+  }
+
+  .secondContainer .secondContainer-leftSide h3 {
+    font-size: 15px;
+  }
+
+  .secondContainer .secondContainer-leftSide .secondContainer-btn {
+    margin-top: 30px !important;
+  }
+
+  .secondContainer .secondContainer-leftSide .secondContainer-btn a {
+    padding: 10px 40px;
+    font-size: 16px;
+  }
+
+  /* ------ FORTH CONTAINER --  */
+
+  .forthContainer .tripleBox {
+    margin-top: 30px;
+    padding-bottom: 0px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card {
+    margin: 0px 5px;
+    padding: 35px 10px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card h3 {
+    font-size: 25px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card p {
+    font-size: 15px;
+  }
+
+  /* -----  FIFTH CONTAINER   */
+
+  .fifthContainer .twoSection .twoSection-right > div {
+    margin-bottom: 10px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right h3 {
+    font-size: 31px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right p {
+    font-size: 13px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right .fifthContainer-btn {
+    margin-top: 30px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right .fifthContainer-btn a {
+    padding: 10px 40px;
+    font-size: 15px;
+  }
+
+  /* ----- sixth container  */
+
+  .sixthContainer {
+    position: relative;
+  }
+
+  .sixthContainer .desc > div {
+    margin-bottom: 10px;
+  }
+
+  .sixthContainer .desc h6 {
+    font-size: 16px;
+  }
+
+  .sixthContainer .desc h2 {
+    font-size: 46px;
+  }
+
+  .sixthContainer .desc h5 {
+    font-size: 18px;
+  }
+
+  .sixthContainer .tripleBox {
+    margin-top: 60px;
+  }
+
+  .sixthContainer .tripleBox .threeBoxes-card {
+    padding: 30px 20px;
+  }
+  .sixthContainer .tripleBox .threeBoxes-card > div {
+    margin-bottom: 15px;
+  }
+
+  .sixthContainer .tripleBox .threeBoxes-card h4 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header .desktopMode nav #hamburgerIcon {
+    display: block;
+  }
+
+  header .desktopMode nav a {
+    display: none;
+  }
+
+  header {
+    padding: 5px 15px;
+    background-color: #000;
+    opacity: 0.8;
+  }
+
+  header .desktopMode .logoContainer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  header .desktopMode nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 40px 10px 0 10px;
+    font-family: "Nunito Sans", Sans-serif;
+  }
+
+  .sixthContainer {
+    background-color: green;
+  }
+
+  .secondContainer {
+    padding: 40px 0px 70px 62px;
+  }
+
+  .secondContainer .secondContainer-leftSide h5 {
+    color: #ffffff;
+    font-size: 10px;
+  }
+
+  .secondContainer .secondContainer-leftSide h1 {
+    font-size: 25px;
+  }
+
+  .secondContainer .secondContainer-leftSide h3 {
+    font-size: 12px;
+  }
+
+  .secondContainer .secondContainer-rightSide img {
+    margin: 0px 0 0 -10px;
+  }
+
+  .secondContainer .secondContainer-leftSide .secondContainer-btn {
+    margin-top: 20px !important;
+  }
+
+  .secondContainer .secondContainer-leftSide .secondContainer-btn a {
+    padding: 10px 40px;
+    font-size: 12px;
+  }
+
+  .forthContainer .desc > div {
+    margin-bottom: 10px;
+  }
+
+  .forthContainer .desc h1 {
+    font-size: 35px;
+  }
+
+  .forthContainer .desc p {
+    font-size: 13px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card {
+    margin: 0px 10px;
+    padding: 35px 10px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card h3 {
+    font-size: 23px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card p {
+    font-size: 13px;
+  }
+
+  /* -----  FIFTH CONTAINER   */
+
+  .fifthContainer .twoSection .twoSection-right > div {
+    margin-bottom: 10px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right h3 {
+    font-size: 31px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right p {
+    font-size: 13px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right .fifthContainer-btn1 {
+    margin-top: 30px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right .fifthContainer-btn1 a {
+    padding: 10px 40px;
+    font-size: 15px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right .fifthContainer-btn2 {
+    margin-top: 30px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right .fifthContainer-btn2 a {
+    padding: 10px 40px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  /* .sixthContainer {
+    background-color: blue;
+  } */
+
+  .secondContainer {
+    padding: 40px 0px 0px 30px;
+  }
+
+  .secondContainer .secondContainer-leftSide h5 {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .secondContainer .secondContainer-leftSide h1 {
+    font-size: 40px;
+  }
+
+  .secondContainer .secondContainer-leftSide h3 {
+    font-size: 12px;
+  }
+
+  .secondContainer .secondContainer-rightSide img {
+    margin: 0px 0 0 -20px;
+  }
+
+  .secondContainer .secondContainer-leftSide .secondContainer-btn {
+    margin-top: 40px !important;
+  }
+
+  .secondContainer .secondContainer-leftSide .secondContainer-btn a {
+    padding: 10px 40px;
+    font-size: 20px;
+  }
+
+  /* --- forth container */
+
+  .forthContainer .desc > div {
+    margin-bottom: 20px;
+  }
+
+  .forthContainer .desc h5 {
+    font-size: 18px;
+  }
+
+  .forthContainer .desc h1 {
+    font-size: 40px;
+  }
+
+  .forthContainer .desc p {
+    font-size: 15px;
+  }
+
+  .forthContainer .tripleBox {
+    margin-top: 20px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card {
+    margin: 0px 10px;
+    padding: 35px 20px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card h3 {
+    font-size: 25px;
+  }
+
+  .forthContainer .tripleBox .tripleBox-card p {
+    font-size: 15px;
+  }
+
+  /* -----  FIFTH CONTAINER   */
+
+  .fifthContainer .twoSection .twoSection-right h3 {
+    font-size: 35px;
+  }
+
+  .fifthContainer .twoSection .twoSection-right p {
+    font-size: 15px;
+  }
+}

@@ -12,8 +12,7 @@ const HomePage = () => {
       <section className="firstContainer">
         <Header />
 
-        <div className="secondContainer px-3">
-
+        <div className="secondContainer ">
           <div className="elementor-background-overlay"></div>
 
           <div
@@ -47,7 +46,7 @@ const HomePage = () => {
                   new leads that convert into new sales.
                 </h3>
 
-                <div className="btnTypeOne mt-5">
+                <div className="btnTypeOne  secondContainer-btn ">
                   <Link to="#"> Learn More </Link>
                 </div>
               </div>
@@ -66,7 +65,6 @@ const HomePage = () => {
       </section>
 
       <section className="thirdContainer">
-
         <div className="iconsContainer d-flex flex-row justify-content-evenly align-items-center">
           <h3>Follow Us </h3>
           <div>
@@ -89,31 +87,25 @@ const HomePage = () => {
       </section>
 
       <section className="forthContainer px-3 py-5">
-
-        
-      <div className="topWave mb-5" >
-
-<div
-    className="elementor-shape elementor-shape-bottom"
-    data-negative="true"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1000 100"
-      preserveAspectRatio="none"
-    >
-      <path
-        className="elementor-shape-fill"
-        d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
+        <div className="topWave mb-5">
+          <div
+            className="elementor-shape elementor-shape-bottom"
+            data-negative="true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1000 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                className="elementor-shape-fill"
+                d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
 c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
 c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
-      ></path>
-    </svg>
-  </div>
-
-
-</div>
-
+              ></path>
+            </svg>
+          </div>
+        </div>
 
         <div className="desc text-center mb-5">
           <div>
@@ -135,8 +127,30 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
 
         <div className="tripleBox">
           <div className="row">
-            <div className="col-12 col-sm-6 col-md-4 col-lg-4">
-              <div className="tripleBox-card bg-white py-4 px-4 rounded-4 text-center">
+            <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 mb-sm-0">
+              <div className="tripleBox-card bg-white rounded-4 text-center">
+                <div className="mb-3">
+                  <img
+                    src="images/bitcoin-removebg-preview.png"
+                    alt="bitcoin"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+
+                <h3 className="mb-3">
+                  Search Engine <br /> optimization{" "}
+                </h3>
+
+                <p>
+                  Dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                  luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 mb-md-0">
+              <div className="tripleBox-card bg-white rounded-4 text-center ">
                 <div className="mb-3">
                   <img
                     src="images/bitcoin-removebg-preview.png"
@@ -158,29 +172,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
 
             <div className="col-12 col-sm-6 col-md-4 col-lg-4">
-              <div className="tripleBox-card bg-white py-4 px-4 rounded-4 text-center ">
-                <div className="mb-3">
-                  <img
-                    src="images/bitcoin-removebg-preview.png"
-                    alt="bitcoin"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-
-                <h3 className="mb-3">
-                  Search Engine <br /> optimization{" "}
-                </h3>
-
-                <p>
-                  Dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                  luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-12 col-sm-6 col-md-4 col-lg-4">
-              <div className="tripleBox-card bg-white py-4 px-4 rounded-4 text-center">
+              <div className="tripleBox-card bg-white rounded-4 text-center">
                 <div className="mb-3">
                   <img
                     src="images/bitcoin-removebg-preview.png"
@@ -203,10 +195,8 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
           </div>
         </div>
 
-        
-        <div className="bottomWave" >
-
-        <div
+        <div className="bottomWave">
+          <div
             className="elementor-shape elementor-shape-bottom"
             data-negative="true"
           >
@@ -223,18 +213,12 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
               ></path>
             </svg>
           </div>
-
-
         </div>
-
-
-
-
       </section>
 
       <section className="fifthContainer px-3 py-5">
         <div className="row twoSection mb-5">
-          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-5 py-0">
+          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-0 px-lg-5 py-0">
             <div className="twoSection-left">
               <div className="image  text-center">
                 <img src="/images/SEO-3.svg" alt="seo" />
@@ -242,7 +226,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
           </div>
 
-          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-5 py-0">
+          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-3 px-lg-5 py-5">
             <div className="twoSection-right">
               <div>
                 <h6>HOW WE'RE DIFFERENT</h6>
@@ -260,7 +244,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
                 </p>
               </div>
 
-              <div className="btnTypeTwo mt-5">
+              <div className="btnTypeTwo fifthContainer-btn1">
                 <Link to="#"> Learn More </Link>
               </div>
             </div>
@@ -268,17 +252,14 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
         </div>
 
         <div className="row twoSection">
-          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-5 py-0">
+          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-3 px-lg-5 py-0">
             <div className="twoSection-right">
               <div>
                 <h6>our promise</h6>
               </div>
 
               <div>
-                <h3>
-                  {" "}
-                  Your online success is our <br /> singular goal{" "}
-                </h3>
+                <h3> Your online success is our singular goal </h3>
               </div>
 
               <div>
@@ -289,13 +270,13 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
                 </p>
               </div>
 
-              <div className="btnTypeTwo mt-5">
+              <div className="btnTypeTwo fifthContainer-btn2">
                 <Link to="#"> Learn More </Link>
               </div>
             </div>
           </div>
 
-          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-5 py-0">
+          <div className="col-12 col-sm-6 col-md-6 col-lg-6 px-0 px-lg-5 py-0">
             <div className="twoSection-left">
               <div className="image  text-center">
                 <img src="/images/SEO-3.svg" alt="seo" />
@@ -305,11 +286,8 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
         </div>
       </section>
 
-
-
-
-      <section className="sixthContainer mt-5 px-3 pb-5">
-
+      <section className="sixthContainer mt-5 px-3 py-5">
+        {/* 
         <div className="topWave" >
 
           
@@ -331,9 +309,11 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </svg>
           </div>
 
-        </div>
+        </div> */}
 
-        <div className="desc text-center">
+        {/* #f0f6fc */}
+
+        <div className="desc text-center" id="growthMethods">
           <div>
             <h6>growth methods</h6>
           </div>
@@ -352,7 +332,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
 
         <div className="tripleBox">
           <div className="row mb-4">
-            <div className="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-md-0 ">
               <div className="threeBoxes-card bg-white rounded-4    ">
                 <div>
                   <FiZoomIn color="#8B24FC" size={30} />
@@ -371,7 +351,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
               </div>
             </div>
 
-            <div className="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-sm-0">
               <div className="threeBoxes-card bg-white rounded-4    ">
                 <div>
                   <FiZoomIn color="#8B24FC" size={30} />
@@ -411,7 +391,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
           </div>
 
           <div className="row">
-            <div className="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-md-0">
               <div className="threeBoxes-card bg-white rounded-4  ">
                 <div>
                   <FiZoomIn color="#8B24FC" size={30} />
@@ -430,7 +410,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
               </div>
             </div>
 
-            <div className="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-sm-0">
               <div className="threeBoxes-card bg-white rounded-4   ">
                 <div>
                   <FiZoomIn color="#8B24FC" size={30} />
@@ -469,20 +449,10 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
           </div>
         </div>
-
-
-        
-
-
       </section>
 
-
-
-
       <section className="seventhContainer px-5">
-
-        
-      {/* <div className="topWave" >
+        {/* <div className="topWave" >
 
           
 <div
@@ -505,11 +475,8 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
 
 </div> */}
 
-
-
-
         <div className="row">
-          <div className="col-12 col-sm-8 col-md-8 col-lg-8">
+          <div className="col-12 col-sm-8 col-md-8 col-lg-8 mb-4 mb-sm-0 ">
             <div className="">
               <h3>Ready to grow your business ? get in Touch ?</h3>
             </div>
