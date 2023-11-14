@@ -68,7 +68,7 @@ const Calculator = () => {
     <>
       <Header />
 
-      <div id="calculatorPage" className="py-3 px-5">
+      <div id="calculatorPage" className="py-0 px-5">
         <div className="cryptoCalculator px-4 py-4">
           <div className="row mb-3">
             <div className=" col-12 col-sm-6 col-md-6 col-lg-6 ">

@@ -10,35 +10,33 @@ const Header = () => {
       <header id="header">
         <div className="desktopMode d-flex flex-row justify-content-between align-items-center  py-2 ">
           <div className="logoContainer">
-            <Link to="#">Sinbit Trades</Link>
+            <Link to="/">Sinbit Trades</Link>
           </div>
 
           <nav className="d-flex flex-row align-items-center">
             <div>
-              {" "}
-              <Link to="#">Home</Link>
+              <Link to="/">Home</Link>
             </div>
             <div>
-              {" "}
-              <Link to="#">Pages</Link>
+              <Link to="/calculator/">Calculator</Link>
             </div>
+
             <div>
-              {" "}
-              <Link to="#">Portfolio</Link>
+              {localStorage.getItem("adminLogin") === null ? (
+                <Link to="/adminSignin/">Admin Sign in</Link>
+              ) : (
+                <Link to="/adminPanel/">Admin Dashboard</Link>
+              )}
             </div>
+
             <div>
-              {" "}
-              <Link to="#">Features</Link>
-            </div>
-            <div>
-              {" "}
               <a href="#growthMethods">Growth Method</a>
             </div>
+
             <div
               id="hamburgerIcon"
               onClick={() => setHambergerIcon(!HambergerIcon)}
             >
-              {" "}
               <Hamburger color="#fff" size={25} />
             </div>
           </nav>
@@ -50,15 +48,12 @@ const Header = () => {
         >
           <nav className="d-flex flex-column justify-content-center align-items-center">
             <li>
-              {" "}
               <Link to="#"> home </Link>
             </li>
             <li>
-              {" "}
               <Link to="#"> about us </Link>
             </li>
             <li>
-              {" "}
               <Link to="#"> services </Link>
             </li>
             <li>
