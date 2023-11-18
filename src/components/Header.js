@@ -20,6 +20,13 @@ const Header = () => {
             <div>
               <Link to="/calculator/">Calculator</Link>
             </div>
+            <div>
+              <Link to="/blog/">Blog</Link>
+            </div>
+
+            {/* <div>
+              <Link to="/blogpost/">Blog Post</Link>
+            </div> */}
 
             <div>
               {localStorage.getItem("adminLogin") === null ? (
@@ -48,24 +55,24 @@ const Header = () => {
         >
           <nav className="d-flex flex-column justify-content-center align-items-center">
             <li>
-              <Link to="#"> home </Link>
+              <Link to="/"> home </Link>
             </li>
             <li>
-              <Link to="#"> about us </Link>
+              <Link to="/"> about us </Link>
             </li>
             <li>
-              <Link to="#"> services </Link>
+              <Link to="/"> services </Link>
             </li>
             <li>
-              <Link to="#"> pricing </Link>
-            </li>
-            <li>
-              {" "}
-              <Link to="#"> blog </Link>
+              <Link to="/"> pricing </Link>
             </li>
             <li>
               {" "}
-              <Link to="#"> contact </Link>
+              <Link to="/"> blog </Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/"> contact </Link>
             </li>
           </nav>
         </div>

@@ -4,7 +4,10 @@ import { useNavigate } from "react-router-dom";
 import ErrorAndLoader from "../../../components/ErrorAndLoader";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getCategoryAsync } from "../../../redux/slice/admin/CategorySlice";
+import {
+  deleteCategoryAsync,
+  getCategoryAsync,
+} from "../../../redux/slice/admin/CategorySlice";
 import { addCategoryAsync } from "../../../redux/slice/admin/CategorySlice";
 
 import Alert from "@mui/material/Alert";
@@ -22,7 +25,7 @@ const AddCategory = () => {
 
   useEffect(() => {
     dispatch(getCategoryAsync());
-  }, [dispatch]);
+  }, []);
 
   const addCatOnClickHandler = () => {
     if (CategoryName.length !== 0) {
@@ -45,6 +48,7 @@ const AddCategory = () => {
           redirect: redirect,
         })
       );
+      navigation("/adminPanel/");
     }
   };
 
@@ -89,40 +93,63 @@ const AddCategory = () => {
               </thead>
               <tbody>
                 {(function () {
-                  if (getCategoryFromRedux.isLoader !== true) {
-                    return getCategoryFromRedux.data.data !== undefined
-                      ? getCategoryFromRedux.data.data.map((data, index) => {
-                          return (
-                            <tr key={index}>
-                              <th scope="row">{index + 1}</th>
-                              <td>{data.name}</td>
-                              <td>
-                                <div className="row">
-                                  <div className="col-6">
-                                    <button className="btn btn-primary">
-                                      Update
-                                    </button>
+                  try {
+                    if (getCategoryFromRedux.isLoader !== true) {
+                      return getCategoryFromRedux.data.data !== undefined
+                        ? getCategoryFromRedux.data.data.map((data, index) => {
+                            return (
+                              <tr key={index}>
+                                <th scope="row">{index + 1}</th>
+                                <td>{data.name}</td>
+                                <td>
+                                  <div className="row">
+                                    <div className="col-6">
+                                      {/* <button className="btn btn-primary">
+                                        Update
+                                      </button> */}
+                                    </div>
+                                    <div className="col-6">
+                                      <button
+                                        className="btn btn-danger"
+                                        onClick={() => {
+                                          if (
+                                            window.confirm(
+                                              "Are you sure want to Delete Category? "
+                                            )
+                                          ) {
+                                            return [
+                                              dispatch(
+                                                deleteCategoryAsync({
+                                                  categoryId: data.id,
+                                                })
+                                              ),
+
+                                              navigation("/adminPanel"),
+                                            ];
+                                          }
+                                        }}
+                                      >
+                                        Delete
+                                      </button>
+                                    </div>
                                   </div>
-                                  <div className="col-6">
-                                    <button className="btn btn-danger">
-                                      Delete
-                                    </button>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          );
-                        })
-                      : null;
-                  } else {
-                    return (
-                      <tr>
-                        <td>
-                          {" "}
-                          <ErrorAndLoader isLoader={true} />{" "}
-                        </td>
-                      </tr>
-                    );
+                                </td>
+                              </tr>
+                            );
+                          })
+                        : null;
+                    } else {
+                      return (
+                        <tr>
+                          <td>
+                            {" "}
+                            <ErrorAndLoader isLoader={true} />{" "}
+                          </td>
+                        </tr>
+                      );
+                    }
+                  } catch (error) {
+                    console.log("AddCategory.js Error - ", error.message);
                   }
                 })()}
               </tbody>

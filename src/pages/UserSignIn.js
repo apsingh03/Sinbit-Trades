@@ -1,8 +1,11 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { backendAPIS } from "../utils/APIS";
 
 const UserSignIn = () => {
+  console.log(backendAPIS);
+
   return (
     <>
       <Header />

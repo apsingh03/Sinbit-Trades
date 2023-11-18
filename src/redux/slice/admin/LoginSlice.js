@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { backendAPIS } from "../../../utils/APIS";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const initialState = {
   data: [],
@@ -25,12 +25,19 @@ export const adminLoginAsync = createAsyncThunk(
   async ({ email, password }) => {
     // console.log( "url - " , backendAPIS.adminPanel.login )
 
-    const response = await axios.post(backendAPIS.adminPanel.login, {
-      email: email,
-      password: password,
-    });
+    try {
+      const response = await axios.post(
+        "hukum.pythonanywhere.com/adminpanel/adminLogin/",
+        {
+          email: email,
+          password: password,
+        }
+      );
 
-    return response.data;
+      return response.data;
+    } catch (error) {
+      console.log("Error - ", error);
+    }
   }
 );
 

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getSubCategoryAsync } from "../../../redux/slice/admin/SubCategorySlice";
+import {
+  deleteSubCategoryAsync,
+  getSubCategoryAsync,
+} from "../../../redux/slice/admin/SubCategorySlice";
 import { getCategoryAsync } from "../../../redux/slice/admin/CategorySlice";
 import { addSubCategoryAsync } from "../../../redux/slice/admin/SubCategorySlice";
 
@@ -33,7 +36,7 @@ const AddSubCategory = () => {
     };
 
     if (subCategoryName.length !== 0) {
-      console.log("--> ", categoryId, subCategoryName);
+      // console.log("--> ", categoryId, subCategoryName);
 
       dispatch(
         addSubCategoryAsync({
@@ -42,6 +45,7 @@ const AddSubCategory = () => {
           redirect: redirect,
         })
       );
+      navigation("/adminPanel/");
     }
   };
 
@@ -62,15 +66,23 @@ const AddSubCategory = () => {
                 id="exampleFormControlSelect1"
                 onChange={(e) => setcategoryId(e.target.value)}
               >
-                {getCategoryFromRedux.data.data !== undefined
-                  ? getCategoryFromRedux.data.data.map((data, index) => {
-                      return (
-                        <option key={index} value={data.id}>
-                          {data.name}
-                        </option>
+                {(function () {
+                  try {
+                    if (getCategoryFromRedux.data.data !== undefined) {
+                      return getCategoryFromRedux.data.data.map(
+                        (data, index) => {
+                          return (
+                            <option key={index} value={data.id}>
+                              {data.name}
+                            </option>
+                          );
+                        }
                       );
-                    })
-                  : ""}
+                    }
+                  } catch (error) {
+                    console.log("AddSubCategory.js Error -", error.message);
+                  }
+                })()}
               </select>
             </div>
 
@@ -108,43 +120,67 @@ const AddSubCategory = () => {
               </thead>
               <tbody>
                 {(function () {
-                  if (getSubCategoryFromRedux.isLoader !== true) {
-                    return getSubCategoryFromRedux.data.data !== undefined
-                      ? getSubCategoryFromRedux.data.data.map((data, index) => {
-                          return (
-                            <tr key={index}>
-                              <th scope="row">{index + 1}</th>
-                              <td>{data.cat_Id.name}</td>
-                              <td>{data.SubCatName}</td>
+                  try {
+                    if (getSubCategoryFromRedux.isLoader !== true) {
+                      return getSubCategoryFromRedux.data.data !== undefined
+                        ? getSubCategoryFromRedux.data.data.map(
+                            (data, index) => {
+                              return (
+                                <tr key={index}>
+                                  <th scope="row">{index + 1}</th>
+                                  <td>{data.cat_Id.name}</td>
+                                  <td>{data.SubCatName}</td>
 
-                              <td>
-                                <div className="row">
-                                  <div className="col-6">
-                                    <button className="btn btn-primary">
-                                      Update
-                                    </button>
-                                  </div>
+                                  <td>
+                                    <div className="row">
+                                      <div className="col-6">
+                                        {/* <button className="btn btn-primary">
+                                          Update
+                                        </button> */}
+                                      </div>
 
-                                  <div className="col-6">
-                                    <button className="btn btn-danger">
-                                      Delete
-                                    </button>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          );
-                        })
-                      : null;
-                  } else {
-                    return (
-                      <tr>
-                        <td>
-                          {" "}
-                          <ErrorAndLoader isLoader={true} />{" "}
-                        </td>
-                      </tr>
-                    );
+                                      <div className="col-6">
+                                        <button
+                                          className="btn btn-danger"
+                                          onClick={() => {
+                                            if (
+                                              window.confirm(
+                                                "Are you sure want to Delete Sub Category? "
+                                              )
+                                            ) {
+                                              return [
+                                                dispatch(
+                                                  deleteSubCategoryAsync({
+                                                    subCategoryId: data.id,
+                                                  })
+                                                ),
+                                                navigation("/adminPanel"),
+                                              ];
+                                            }
+                                          }}
+                                        >
+                                          Delete
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              );
+                            }
+                          )
+                        : null;
+                    } else {
+                      return (
+                        <tr>
+                          <td>
+                            {" "}
+                            <ErrorAndLoader isLoader={true} />{" "}
+                          </td>
+                        </tr>
+                      );
+                    }
+                  } catch (error) {
+                    console.log("AddSubCategory Error -", error.message);
                   }
                 })()}
               </tbody>

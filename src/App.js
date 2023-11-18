@@ -7,6 +7,8 @@ import Calculator from "./pages/Calculator";
 import UserSignIn from "./pages/UserSignIn";
 import AdminJunction from "./pages/admin/AdminJunction";
 import AdminSignIn from "./pages/admin/AdminSignIn";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function App() {
   // document.body.addEventListener('onscroll', function( event ) {
@@ -65,6 +67,8 @@ function App() {
         <Route path="/demo" element={<Demo />} />
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/adminSignin/" element={<AdminSignIn />} />
+        <Route path="/blog/" element={<Blog />} />
+        <Route path="/blogpost/*" element={<BlogPost />} />
 
         {/* Admin junction */}
         <Route path="/adminPanel/*" element={<AdminJunction />} />

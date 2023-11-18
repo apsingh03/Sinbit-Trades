@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
@@ -11,8 +9,10 @@ import AddCategory from "./Components/AddCategory";
 import AddSubCategory from "./Components/AddSubCategory";
 
 import AllBlog from "./Components/AllBlogs";
-import EditBlog from "./Components/EditBlog";
 import AddBlog from "./Components/AddBlog";
+import EditBlog from "./Components/EditBlog";
+import RecycleBin from "./Components/RecycleBin";
+
 import { useSelector, useDispatch } from "react-redux";
 import { adminLogout } from "../../redux/slice/admin/LoginSlice";
 
@@ -69,7 +69,11 @@ const AdminJunction = () => {
               <li>
                 <Link className="dropdown-item" to="#!">
                   Email -{" "}
-                  <b>{loggedAdminFromRedux.loggedAdminInfo.user.email}</b>{" "}
+                  <b>
+                    {" "}
+                    {loggedAdminFromRedux.loggedAdminInfo.user.id} |{" "}
+                    {loggedAdminFromRedux.loggedAdminInfo.user.email}
+                  </b>{" "}
                 </Link>
               </li>
               <li>
@@ -80,7 +84,7 @@ const AdminJunction = () => {
               <li>
                 <hr className="dropdown-divider" />
               </li>
-              <li onClick={() => dispatch(adminLogout())}>
+              <li onClick={() => [dispatch(adminLogout()), navigation("/")]}>
                 <Link className="dropdown-item" to="#!">
                   Logout
                 </Link>
@@ -107,6 +111,7 @@ const AdminJunction = () => {
                       Home
                     </Link>
                   </div>
+
                   <div className="sb-sidenav-menu-heading">Category</div>
                   <Link
                     className="nav-link collapsed"
@@ -171,17 +176,30 @@ const AdminJunction = () => {
                       <Link className="nav-link" to="/adminPanel/allBlogs">
                         All Blogs
                       </Link>
+
                       <Link className="nav-link" to="/adminPanel/addBlog">
                         Add Blog
-                      </Link>
-                      <Link className="nav-link" to="/adminPanel/editBlog">
-                        Update Blog
                       </Link>
                     </nav>
                   </div>
                 </div>
+
+                <div className="sb-sidenav-menu-heading"></div>
+                <Link
+                  className="nav-link collapsed"
+                  to="/adminPanel/recycleBin"
+                >
+                  <div className="sb-nav-link-icon">
+                    <i className="fas fa-columns"></i>
+                  </div>
+                  Recycle Bin
+                  <div className="sb-sidenav-collapse-arrow">
+                    <i className="fas fa-angle-down"></i>
+                  </div>
+                </Link>
               </div>
             </div>
+
             {/* <div className="sb-sidenav-footer">
                         <div className="small">Logged in as:</div>
                         Start Bootsadfsadfstrap
@@ -202,12 +220,9 @@ const AdminJunction = () => {
                 {/* BLOGS AllBlog */}
 
                 <Route path="/allBlogs" element={<AllBlog />} />
-                <Route path="/editBlog" element={<EditBlog />} />
+                <Route path="/editBlog/*" element={<EditBlog />} />
                 <Route path="/addBlog" element={<AddBlog />} />
-
-                {/* <Route path="/" element={<Demo  />} />
-                        <Route path="/" element={<Calculator  />} />
-                        <Route path="/" element={<UserSignIn  />} /> */}
+                <Route path="/recycleBin" element={<RecycleBin />} />
               </Routes>
             </div>
           </main>

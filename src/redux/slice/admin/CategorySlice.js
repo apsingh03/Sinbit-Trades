@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { backendAPIS } from "../../../utils/APIS";
-import { redirect } from "react-router-dom";
+// import { redirect } from "react-router-dom";
 import { axiosBearerToken } from "../../../utils/headerToken";
 
 const initialState = { data: [], isLoader: false, isError: false };
@@ -26,7 +26,7 @@ export const getCategoryAsync = createAsyncThunk(
 
 export const addCategoryAsync = createAsyncThunk(
   "admin/addCategory",
-  async ({ CategoryName, alert, redirect }) => {
+  async ({ CategoryName, redirect }) => {
     try {
       const response = await axios.post(
         backendAPIS.blog.addCategory,
@@ -36,6 +36,28 @@ export const addCategoryAsync = createAsyncThunk(
         { headers: { Authorization: axiosBearerToken } }
       );
 
+      return response.data;
+    } catch (error) {
+      console.log(error.response.data.detail, " -> ", error);
+    }
+  }
+);
+
+export const deleteCategoryAsync = createAsyncThunk(
+  "admin/deleteCategory",
+  async ({ categoryId }) => {
+    try {
+      let sessionUrl = backendAPIS.blog.deleteCategoryBy + `${categoryId}/`;
+
+      // console.log(" sessionUrl " , sessionUrl )
+
+      const response = await axios.delete(
+        sessionUrl,
+
+        { headers: { Authorization: axiosBearerToken } }
+      );
+
+      // console.log(  response.data )
       return response.data;
     } catch (error) {
       console.log(error.response.data.detail, " -> ", error);
@@ -75,10 +97,24 @@ export const getCategorySlice = createSlice({
 
         if (action.payload.message === "Category Added") {
           alert(action.payload.message);
-          // redirect("/")
         }
 
-        // state.data.concat(action.payload)
+        state.data = action.payload;
+      });
+
+    builder
+      .addCase(deleteCategoryAsync.pending, (state, action) => {
+        state.isLoader = true;
+      })
+
+      .addCase(deleteCategoryAsync.fulfilled, (state, action) => {
+        state.isLoader = false;
+
+        if (action.payload.message === "Category deleted") {
+          alert(action.payload.message);
+        }
+
+        state.data = action.payload;
       });
   },
 });
