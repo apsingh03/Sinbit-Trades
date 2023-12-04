@@ -91,9 +91,12 @@ export const getSubCategorySlice = createSlice({
 
       .addCase(addSubCategoryAsync.fulfilled, (state, action) => {
         state.isLoader = false;
-        alert(action.payload.message);
-        state.data = action.payload;
-        // state.data = action.payload;
+        // alert(action.payload.message);
+
+        console.log("state", state.data.data);
+        console.log("action", action);
+
+        state.data.data.push(action.payload.data[0]);
       });
 
     builder
@@ -104,10 +107,13 @@ export const getSubCategorySlice = createSlice({
       .addCase(deleteSubCategoryAsync.fulfilled, (state, action) => {
         state.isLoader = false;
 
-        if (action.payload.message === "Sub Category deleted") {
-          alert(action.payload.message);
-        }
-        state.data = action.payload;
+        const { subCategoryId } = action.meta.arg;
+
+        const subCatIndex = state.data.data.findIndex((data) => {
+          return data.id === subCategoryId;
+        });
+
+        state.data.data.splice(subCatIndex, 1);
       });
   },
 });

@@ -45,7 +45,7 @@ const AddSubCategory = () => {
           redirect: redirect,
         })
       );
-      navigation("/adminPanel/");
+      // navigation("/adminPanel/");
     }
   };
 
@@ -154,7 +154,7 @@ const AddSubCategory = () => {
                                                     subCategoryId: data.id,
                                                   })
                                                 ),
-                                                navigation("/adminPanel"),
+                                                // navigation("/adminPanel"),
                                               ];
                                             }
                                           }}

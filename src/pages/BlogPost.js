@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BlogSubHeader from "../components/BlogSubHeader";
@@ -12,7 +12,7 @@ import parse from "html-react-parser";
 
 // redux
 import { getBlogByIdAsync } from "../redux/slice/admin/GetBlogByIdSlice";
-import DescriptionAppended from "../components/DescriptionAppended";
+// import DescriptionAppended from "../components/DescriptionAppended";
 
 const BlogPost = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const BlogPost = () => {
     const blogIdFromUrl = window.location.href.split("/")[6];
 
     dispatch(getBlogByIdAsync({ blogId: blogIdFromUrl }));
-  }, []);
+  }, [dispatch]);
 
   //   const parser = new DOMParser();
 
@@ -125,7 +125,7 @@ const BlogPost = () => {
               <div className="avatarImage" style={{ marginRight: "10px" }}>
                 <img
                   src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
-                  alt="Avatar Image"
+                  alt="Avatar"
                   width={50}
                   height={50}
                   className="pr-5  "
@@ -168,7 +168,7 @@ const BlogPost = () => {
               <div className="avatarImage" style={{ marginRight: "10px" }}>
                 <img
                   src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
-                  alt="Avatar Image"
+                  alt="Avatar "
                   width={50}
                   height={50}
                   className="pr-5  "
@@ -211,7 +211,7 @@ const BlogPost = () => {
               <div className="avatarImage" style={{ marginRight: "10px" }}>
                 <img
                   src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
-                  alt="Avatar Image"
+                  alt="Avatar "
                   width={50}
                   height={50}
                   className="pr-5  "

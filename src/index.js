@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./css/index.css";
 import "./css/AdminDashboard.css";
+import "./js/scripts.js";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";

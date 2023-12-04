@@ -11,11 +11,21 @@ export const getCategoryAsync = createAsyncThunk(
 
   async () => {
     try {
-      const response = await axios.get(backendAPIS.blog.addCategory, {
-        headers: {
-          Authorization: axiosBearerToken,
-        },
-      });
+      // const response = await axios.get(backendAPIS.blog.addCategory
+
+      //   , {
+
+      // });
+
+      const response = await axios.get(
+        backendAPIS.blog.addCategory,
+
+        {
+          headers: {
+            Authorization: axiosBearerToken,
+          },
+        }
+      );
 
       return response.data;
     } catch (error) {
@@ -45,11 +55,10 @@ export const addCategoryAsync = createAsyncThunk(
 
 export const deleteCategoryAsync = createAsyncThunk(
   "admin/deleteCategory",
+
   async ({ categoryId }) => {
     try {
       let sessionUrl = backendAPIS.blog.deleteCategoryBy + `${categoryId}/`;
-
-      // console.log(" sessionUrl " , sessionUrl )
 
       const response = await axios.delete(
         sessionUrl,
@@ -57,7 +66,6 @@ export const deleteCategoryAsync = createAsyncThunk(
         { headers: { Authorization: axiosBearerToken } }
       );
 
-      // console.log(  response.data )
       return response.data;
     } catch (error) {
       console.log(error.response.data.detail, " -> ", error);
@@ -92,14 +100,7 @@ export const getCategorySlice = createSlice({
       .addCase(addCategoryAsync.fulfilled, (state, action) => {
         state.isLoader = false;
 
-        // console.log("state - ", state )
-        // console.log("action - ", action )
-
-        if (action.payload.message === "Category Added") {
-          alert(action.payload.message);
-        }
-
-        state.data = action.payload;
+        state.data.data.push(action.payload.data);
       });
 
     builder
@@ -110,11 +111,13 @@ export const getCategorySlice = createSlice({
       .addCase(deleteCategoryAsync.fulfilled, (state, action) => {
         state.isLoader = false;
 
-        if (action.payload.message === "Category deleted") {
-          alert(action.payload.message);
-        }
+        const { categoryId } = action.meta.arg;
 
-        state.data = action.payload;
+        const categoryIdx = state.data.data.findIndex((data) => {
+          return data.id === categoryId;
+        });
+
+        state.data.data.splice(categoryIdx, 1);
       });
   },
 });

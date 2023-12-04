@@ -24,11 +24,11 @@ const AdminJunction = () => {
 
   useEffect(() => {
     try {
-      if (localStorage.getItem("adminLogin") === null) {
+      if (sessionStorage.getItem("adminLogin") === null) {
         navigation("/");
       }
     } catch (error) {
-      console.log("Error - ", error);
+      // console.log("Error - ", error);
     }
   }, [navigation]);
 

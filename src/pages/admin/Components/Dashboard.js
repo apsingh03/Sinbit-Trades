@@ -14,41 +14,49 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
 
-  // try {
-
-  // } catch (error) {
-  //   console.log("Admin Dashboard.js Error " , error )
-  // }
-
   const getCategoryFromRedux = useSelector((state) => state.category.data.data);
+
   const getSubCategoryFromRedux = useSelector(
     (state) => state.subCategory.data.data
   );
+
   const getBlogFromRedux = useSelector((state) => state.blog.data.data);
 
-  const publishedBlogs =
-    getBlogFromRedux &&
-    getBlogFromRedux.filter((data) => {
-      return data.isPublished === true ? data : null;
-    });
+  let publishedBlogs, unPublishedBlogs, recycleBlogs, isFeaturedBlogs;
 
-  const unPublishedBlogs =
-    getBlogFromRedux &&
-    getBlogFromRedux.filter((data) => {
-      return data.isPublished === true ? data : null;
-    });
+  try {
+    publishedBlogs =
+      getBlogFromRedux &&
+      getBlogFromRedux.filter((data) => {
+        return data.isPublished === true && data.isRecycle === false
+          ? data
+          : null;
+      });
 
-  const recycleBlogs =
-    getBlogFromRedux &&
-    getBlogFromRedux.filter((data) => {
-      return data.isRecycle === true ? data : null;
-    });
+    unPublishedBlogs =
+      getBlogFromRedux &&
+      getBlogFromRedux.filter((data) => {
+        return data.isPublished === false && data.isRecycle === false
+          ? data
+          : null;
+      });
 
-  const isFeaturedBlogs =
-    getBlogFromRedux &&
-    getBlogFromRedux.filter((data) => {
-      return data.isFeatured === true ? data : null;
-    });
+    recycleBlogs =
+      getBlogFromRedux &&
+      getBlogFromRedux.filter((data) => {
+        return data.isRecycle === true ? data : null;
+      });
+
+    isFeaturedBlogs =
+      getBlogFromRedux &&
+      getBlogFromRedux.filter((data) => {
+        return data.isFeatured === true && data.isRecycle === false
+          ? data
+          : null;
+      });
+  } catch (error) {
+    console.log("Admin Dashboard.js Error ", error);
+  }
 
   useEffect(() => {
     dispatch(getCategoryAsync());

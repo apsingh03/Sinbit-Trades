@@ -1,4 +1,6 @@
-const websiteUrl = "hukum.pythonanywhere.com/";
+// const websiteUrl = "http://localhost:8000/";
+
+const websiteUrl = "https://hukum.pythonanywhere.com/";
 
 export const backendAPIS = {
   blog: {
@@ -8,12 +10,10 @@ export const backendAPIS = {
     createBlog: websiteUrl + "blog/createBlog/",
     getBlogBy: websiteUrl + "blog/getBlogBy/",
     updateBlogBy: websiteUrl + "blog/updateBlogBy/",
-
     blogIsFeaturedBy: websiteUrl + "blog/blogIsFeaturedBy/",
     blogIsPublishedBy: websiteUrl + "blog/blogIsPublishedBy/",
     deleteBlogBy: websiteUrl + "blog/deleteBlogBy/",
     permanentDeleteBlogBy: websiteUrl + "blog/permanentDeleteBlogBy/",
-
     deleteCategoryBy: websiteUrl + "blog/deleteCategoryBy/",
     deleteSubCategoryBy: websiteUrl + "blog/deleteSubCategoryBy/",
   },

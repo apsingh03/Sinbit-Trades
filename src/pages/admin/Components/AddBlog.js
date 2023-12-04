@@ -35,7 +35,6 @@ const AddBlog = () => {
   const navigation = useNavigate();
 
   useEffect(() => {
-
     dispatch(getCategoryAsync());
     // dispatch( getSubCategoryAsync() );
   }, [navigation]);
@@ -48,7 +47,6 @@ const AddBlog = () => {
         })
       );
     }
-    
   };
 
   const addBlogOnSubmit = (e) => {

@@ -48,7 +48,7 @@ const AddCategory = () => {
           redirect: redirect,
         })
       );
-      navigation("/adminPanel/");
+      // navigation("/adminPanel/");
     }
   };
 
@@ -124,7 +124,7 @@ const AddCategory = () => {
                                                 })
                                               ),
 
-                                              navigation("/adminPanel"),
+                                              // navigation("/adminPanel"),
                                             ];
                                           }
                                         }}

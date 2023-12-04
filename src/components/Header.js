@@ -17,11 +17,22 @@ const Header = () => {
             <div>
               <Link to="/">Home</Link>
             </div>
+
+            <div>
+              <Link to="/">Trade Log</Link>
+            </div>
+
+            <div>
+              <Link to="/blog/">Learn</Link>
+            </div>
+
             <div>
               <Link to="/calculator/">Calculator</Link>
             </div>
             <div>
-              <Link to="/blog/">Blog</Link>
+              <Link to="https://telegram.me/sinbittrades" target="_blank">
+                Telegram
+              </Link>
             </div>
 
             {/* <div>
@@ -29,15 +40,12 @@ const Header = () => {
             </div> */}
 
             <div>
-              {localStorage.getItem("adminLogin") === null ? (
-                <Link to="/adminSignin/">Admin Sign in</Link>
+              {sessionStorage.getItem("adminLogin") === null ? (
+                ""
               ) : (
+                // <Link to="/adminSignin/">Admin Sign in</Link>
                 <Link to="/adminPanel/">Admin Dashboard</Link>
               )}
-            </div>
-
-            <div>
-              <a href="#growthMethods">Growth Method</a>
             </div>
 
             <div
@@ -55,24 +63,22 @@ const Header = () => {
         >
           <nav className="d-flex flex-column justify-content-center align-items-center">
             <li>
-              <Link to="/"> home </Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/"> about us </Link>
+              <Link to="/">Trade Log</Link>
             </li>
             <li>
-              <Link to="/"> services </Link>
+              <Link to="/blog/">Learn</Link>
             </li>
             <li>
-              <Link to="/"> pricing </Link>
-            </li>
-            <li>
-              {" "}
-              <Link to="/"> blog </Link>
+              <Link to="/calculator/">Calculator</Link>
             </li>
             <li>
               {" "}
-              <Link to="/"> contact </Link>
+              <Link to="https://telegram.me/sinbittrades" target="_blank">
+                Telegram
+              </Link>
             </li>
           </nav>
         </div>

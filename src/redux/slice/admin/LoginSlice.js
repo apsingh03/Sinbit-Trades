@@ -9,12 +9,12 @@ const initialState = {
   isError: false,
   loggedAdminInfo: {
     user:
-      localStorage.getItem("adminLogin") !== null
-        ? JSON.parse(localStorage.getItem("adminLogin")).user[0]
+      sessionStorage.getItem("adminLogin") !== null
+        ? JSON.parse(sessionStorage.getItem("adminLogin")).user[0]
         : "",
     token:
-      localStorage.getItem("adminLogin") !== null
-        ? JSON.parse(localStorage.getItem("adminLogin")).token
+      sessionStorage.getItem("adminLogin") !== null
+        ? JSON.parse(sessionStorage.getItem("adminLogin")).token
         : "",
   },
 };
@@ -26,13 +26,10 @@ export const adminLoginAsync = createAsyncThunk(
     // console.log( "url - " , backendAPIS.adminPanel.login )
 
     try {
-      const response = await axios.post(
-        "hukum.pythonanywhere.com/adminpanel/adminLogin/",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const response = await axios.post(backendAPIS.adminPanel.login, {
+        email: email,
+        password: password,
+      });
 
       return response.data;
     } catch (error) {
@@ -43,9 +40,9 @@ export const adminLoginAsync = createAsyncThunk(
 
 export const adminLogout = createAsyncThunk("admin/logout", async () => {
   try {
-    if (localStorage.getItem("adminLogin")) {
+    if (sessionStorage.getItem("adminLogin")) {
       console.log("called logout");
-      localStorage.removeItem("adminLogin");
+      sessionStorage.removeItem("adminLogin");
     }
   } catch (error) {
     console.log("Error - ", error);
@@ -79,7 +76,7 @@ export const loginSlice = createSlice({
             };
 
             const convert = JSON.stringify(loggedAdminInfo);
-            localStorage.setItem("adminLogin", convert);
+            sessionStorage.setItem("adminLogin", convert);
           } catch (error) {
             console.log("Error - ", error);
           }

@@ -11,13 +11,15 @@ export const getBlogAsync = createAsyncThunk(
 
   async () => {
     try {
-      console.log("Blog Slice ", backendAPIS.blog.createBlog);
-      const response = await axios.get(backendAPIS.blog.createBlog, {});
+      const response = await axios.get(backendAPIS.blog.createBlog);
 
+      // console.log("GET Blog ", response.data)
       return response.data;
     } catch (error) {
       console.log(error.response.data.detail, " -> ", error);
     }
+
+    // console.log("Blog Slice ", backendAPIS.blog.createBlog);
   }
 );
 
@@ -89,7 +91,7 @@ export const blogIsFeaturedByAsync = createAsyncThunk(
         { headers: { Authorization: axiosBearerToken } }
       );
 
-      // console.log(response.data.message)
+      // console.log("is Featured - " , response.data )
 
       return response.data;
     } catch (error) {
@@ -170,7 +172,6 @@ export const permanentDeleteBlogByAsync = createAsyncThunk(
 export const BlogSlice = createSlice({
   name: "blog",
   initialState,
-  reducers: {},
 
   extraReducers: (builder) => {
     builder
@@ -180,6 +181,9 @@ export const BlogSlice = createSlice({
       .addCase(getBlogAsync.fulfilled, (state, action) => {
         state.isLoader = false;
         state.data = action.payload;
+
+        // console.log("GET state - " , state.data )
+        // console.log("action - " , action )
       })
       .addCase(getBlogAsync.rejected, (state, action) => {
         state.isLoader = false;
@@ -199,7 +203,7 @@ export const BlogSlice = createSlice({
         //   console.log(data);
         // });
 
-        state.data = action.payload;
+        // state.data = action.payload;
       })
 
       .addCase(updateBlogAsync.pending, (state, action) => {
@@ -225,22 +229,16 @@ export const BlogSlice = createSlice({
       .addCase(blogIsFeaturedByAsync.fulfilled, (state, action) => {
         state.isLoader = false;
 
-        // console.log("state - ", state.data )
-        // console.log("action - ", action )
+        const { authorId, blogId } = action.meta.arg;
 
-        // const {authorId , blogId , msg  } = action.meta.arg
-
-        // console.log("data - " , authorId , blogId , msg)
-
-        // if (action.payload.message === "Featured status updated") {
-        //   alert(action.payload.message)
-        // }
-
-        state.data = action.payload;
+        state.data.data.filter((data) => {
+          if (data.id === blogId && data.authorId.id === authorId) {
+            data.isFeatured = !data.isFeatured;
+          }
+        });
       })
 
       // isPublished
-
       .addCase(blogIsPublishedByAsync.pending, (state, action) => {
         state.isLoader = true;
       })
@@ -248,11 +246,13 @@ export const BlogSlice = createSlice({
       .addCase(blogIsPublishedByAsync.fulfilled, (state, action) => {
         state.isLoader = false;
 
-        // console.log("state - ", state )
-        // console.log("action - ", action )
-        // alert(action.payload.message);
-        // console.log( "payload - ",  action.payload)
-        state.data = action.payload;
+        const { authorId, blogId } = action.meta.arg;
+
+        state.data.data.filter((data) => {
+          if (data.id === blogId && data.authorId.id === authorId) {
+            data.isPublished = !data.isPublished;
+          }
+        });
       })
 
       .addCase(deleteBlogByAsync.pending, (state, action) => {
@@ -262,11 +262,13 @@ export const BlogSlice = createSlice({
       .addCase(deleteBlogByAsync.fulfilled, (state, action) => {
         state.isLoader = false;
 
-        // console.log("state - ", state )
-        // console.log("action - ", action )
-        // alert(action.payload.message);
-        // console.log( "payload - ",  action.payload)
-        state.data = action.payload;
+        const { authorId, blogId } = action.meta.arg;
+
+        const blogIdx = state.data.data.findIndex((data) => {
+          return data.id === blogId && data.authorId.id === authorId;
+        });
+
+        state.data.data.splice(blogIdx, 1);
       })
 
       .addCase(permanentDeleteBlogByAsync.pending, (state, action) => {
@@ -276,11 +278,13 @@ export const BlogSlice = createSlice({
       .addCase(permanentDeleteBlogByAsync.fulfilled, (state, action) => {
         state.isLoader = false;
 
-        // console.log("state - ", state )
-        // console.log("action - ", action )
-        // alert(action.payload.message);
-        // console.log( "payload - ",  action.payload)
-        state.data = action.payload;
+        const { authorId, blogId } = action.meta.arg;
+
+        const blogIdx = state.data.data.findIndex((data) => {
+          return data.id === blogId && data.authorId.id === authorId;
+        });
+
+        state.data.data.splice(blogIdx, 1);
       });
   },
 });

@@ -90,8 +90,6 @@ const AllBlogs = () => {
                                             msg: "notFeatured",
                                           })
                                         ),
-
-                                        navigation("/adminPanel/allBlogs"),
                                       ]}
                                     >
                                       <BsStar size={15} />
@@ -103,7 +101,7 @@ const AllBlogs = () => {
                                     <td
                                       title="Featured Blog"
                                       style={{ cursor: "pointer" }}
-                                      onClick={() =>
+                                      onClick={() => [
                                         dispatch(
                                           blogIsFeaturedByAsync({
                                             blogId: data.id,
@@ -112,8 +110,8 @@ const AllBlogs = () => {
                                                 .loggedAdminInfo.user.id,
                                             msg: "featured",
                                           })
-                                        )
-                                      }
+                                        ),
+                                      ]}
                                     >
                                       <BsFillStarFill size={15} color="green" />
                                     </td>
@@ -133,7 +131,7 @@ const AllBlogs = () => {
                                         color: "blue",
                                         fontWeight: "bold",
                                       }}
-                                      onClick={(e) =>
+                                      onClick={() => [
                                         dispatch(
                                           blogIsPublishedByAsync({
                                             blogId: data.id,
@@ -142,8 +140,8 @@ const AllBlogs = () => {
                                                 .loggedAdminInfo.user.id,
                                             msg: "notPublished",
                                           })
-                                        )
-                                      }
+                                        ),
+                                      ]}
                                     >
                                       Publish It
                                     </td>
@@ -159,7 +157,7 @@ const AllBlogs = () => {
                                         color: "green",
                                         fontWeight: "bold",
                                       }}
-                                      onClick={(e) =>
+                                      onClick={() => [
                                         dispatch(
                                           blogIsPublishedByAsync({
                                             blogId: data.id,
@@ -168,8 +166,8 @@ const AllBlogs = () => {
                                                 .loggedAdminInfo.user.id,
                                             msg: "published",
                                           })
-                                        )
-                                      }
+                                        ),
+                                      ]}
                                     >
                                       Published
                                     </td>

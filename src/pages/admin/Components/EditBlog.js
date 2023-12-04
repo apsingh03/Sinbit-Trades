@@ -21,6 +21,7 @@ const EditBlog = () => {
   const getSubCategoryFromCatRedux = useSelector(
     (state) => state.subCatByCatId
   );
+
   const getCategoryFromRedux = useSelector((state) => state.category);
   const getBlogbyIdRedux = useSelector((state) => state.blogById);
 

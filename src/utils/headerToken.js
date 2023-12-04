@@ -1,6 +1,6 @@
 const headerToken =
-  localStorage.getItem("adminLogin") !== null
-    ? JSON.parse(localStorage.getItem("adminLogin")).token.access
-    : "";
+  sessionStorage.getItem("adminLogin") !== null
+    ? JSON.parse(sessionStorage.getItem("adminLogin")).token.access
+    : null;
 
 export const axiosBearerToken = "Bearer " + headerToken;

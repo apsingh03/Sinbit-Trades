@@ -68,8 +68,8 @@ const Calculator = () => {
     <>
       <Header />
 
-      <div id="calculatorPage" className="py-0 px-5">
-        <div className="cryptoCalculator px-4 py-4">
+      <div id="calculatorPage">
+        <div className="cryptoCalculator">
           <div className="row mb-3">
             <div className=" col-12 col-sm-6 col-md-6 col-lg-6 ">
               <label htmlFor="entryPrice">Entry Price</label>
@@ -187,7 +187,7 @@ const Calculator = () => {
           </div>
         </div>
 
-        <div className="calculationResult mb-5  bg-white mt-5 px-2 py-3">
+        <div className="calculationResult mb-5  bg-white mt-5 ">
           <div className="d-flex flex-row">
             <p>
               {" "}
