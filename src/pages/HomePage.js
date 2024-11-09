@@ -187,7 +187,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
         <div className="tripleBox">
           <div className="row">
             <div className="col-12 col-sm-6 col-md-4 mb-4 mb-sm-0">
-              <div className="tripleBox-card bg-white rounded-4 text-center">
+              <div className="tripleBox-card rounded-4 text-center">
                 <div className="mb-3">
                   <SeoIcon />
                 </div>
@@ -206,7 +206,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
 
             <div className="col-12 col-sm-6 col-md-4 mb-4 mb-sm-0">
-              <div className="tripleBox-card bg-white rounded-4 text-center">
+              <div className="tripleBox-card rounded-4 text-center">
                 <div className="mb-3">
                   <SocialMediaIcon />
                 </div>
@@ -226,7 +226,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
 
             <div className="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-              <div className="tripleBox-card bg-white rounded-4 text-center ">
+              <div className="tripleBox-card rounded-4 text-center ">
                 <div className="mb-3">
                   <SearchMediaIcon />
                 </div>
@@ -353,7 +353,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
       </section>
 
       <section className="sixthContainer mt-5 px-3 py-5">
-        {/* 
+        
         <div className="topWave" >
 
           
@@ -377,7 +377,9 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
 
         </div>
 
-        {/* #f0f6fc */}
+       
+
+       
 
         <div className="desc text-center" id="growthMethods">
           {/* <div>
@@ -399,7 +401,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
         <div className="tripleBox">
           <div className="row mb-4">
             <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-md-0 ">
-              <div className="threeBoxes-card bg-white rounded-4    ">
+              <div className="threeBoxes-card  rounded-4    ">
                 <div>
                   <img
                     src="images/icons/glass.png"
@@ -424,7 +426,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
 
             <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-sm-0">
-              <div className="threeBoxes-card bg-white rounded-4    ">
+              <div className="threeBoxes-card  rounded-4    ">
                 <div>
                   <img
                     src="images/icons/link.png"
@@ -450,7 +452,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
 
             <div className="col-12 col-sm-6 col-md-4 col-lg-4">
-              <div className="threeBoxes-card bg-white rounded-4    ">
+              <div className="threeBoxes-card  rounded-4    ">
                 <div>
                   <img
                     src="images/icons/note-book.png"
@@ -479,7 +481,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
 
           <div className="row">
             <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-md-0">
-              <div className="threeBoxes-card bg-white rounded-4  ">
+              <div className="threeBoxes-card  rounded-4  ">
                 <div>
                   <img
                     src="images/icons/ranking.png"
@@ -505,7 +507,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
 
             <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-3 mb-sm-0">
-              <div className="threeBoxes-card bg-white rounded-4   ">
+              <div className="threeBoxes-card  rounded-4   ">
                 <div>
                   <img
                     src="images/icons/globe.png"
@@ -532,7 +534,7 @@ c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"
             </div>
 
             <div className="col-12 col-sm-6 col-md-4 col-lg-4">
-              <div className="threeBoxes-card bg-white rounded-4   ">
+              <div className="threeBoxes-card  rounded-4   ">
                 <div>
                   <img
                     src="images/icons/diamond.png"

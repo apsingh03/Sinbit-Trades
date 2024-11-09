@@ -18,13 +18,7 @@ export const getCategoryAsync = createAsyncThunk(
       // });
 
       const response = await axios.get(
-        backendAPIS.blog.addCategory,
-
-        {
-          headers: {
-            Authorization: axiosBearerToken,
-          },
-        }
+        backendAPIS.blog.addCategory
       );
 
       return response.data;

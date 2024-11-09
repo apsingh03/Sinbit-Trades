@@ -43,7 +43,7 @@ const BlogPost = () => {
     <>
       <Header />
 
-      <BlogSubHeader />
+      {/* <BlogSubHeader /> */}
 
       <div id="blogPostPage">
         <div className="px-5 py-5">
@@ -139,7 +139,7 @@ const BlogPost = () => {
                 <div className="  date d-flex flex-row justify-content-start align-items-baseline">
                   {/* <div className='avatarImage' ><img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt='Avatar Image'  /> </div> */}
                   <div>
-                    <p>Pranav Sinha</p>
+                    <p>Name  </p>
                   </div>
                   <div>
                     <p>
@@ -182,7 +182,7 @@ const BlogPost = () => {
                 <div className="  date d-flex flex-row justify-content-start align-items-baseline">
                   {/* <div className='avatarImage' ><img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt='Avatar Image'  /> </div> */}
                   <div>
-                    <p>Pranav Sinha</p>
+                    <p>Name</p>
                   </div>
                   <div>
                     <p>
@@ -225,7 +225,7 @@ const BlogPost = () => {
                 <div className="  date d-flex flex-row justify-content-start align-items-baseline">
                   {/* <div className='avatarImage' ><img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt='Avatar Image'  /> </div> */}
                   <div>
-                    <p>Pranav Sinha</p>
+                    <p>Name</p>
                   </div>
                   <div>
                     <p>

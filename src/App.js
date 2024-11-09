@@ -39,7 +39,7 @@ function App() {
 
           let headerChild = document.querySelectorAll("#header  a");
 
-          headerChild.forEach((childEle) => (childEle.style.color = "#fff"));
+          headerChild.forEach((childEle) => (childEle.style.color = "black"));
         }
       }
 
